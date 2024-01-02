@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹葉</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='植物框架.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/Users/hoyi/CGI/cgi-bin/static/樹葉.css"/> -->
+</head>
+
+<body>
+    <div class="Background" id ='Background'>
+        <div class="Top" id="Top1">
+            <a href="#" class="Topimage" style="background-image: url('/static/視網膜圖片三條線1.png');"></a>
+            <!-- <a href="#" class="Topimage" style="background-image: url('/Users/hoyi/Downloads/視網膜圖片三條線1.png') ;"></a> -->
+            <form action="/Find" method="POST">
+                <input type="textbox" name="search" class ='Toptext' />
+                <button onclick="searchPlant()" class="Search">查詢</button>
+            </form>
+            
+        </div>
+        <div class="Topdirections">（可搜尋樹名、科、地點）</div>
+        <div class="Backgroundbuttom">東海大學一校30種常見樹介紹</div>
+        <div class="Backgrounddirections">
+            木麻黃（木麻黃科）：<br>
+            1.葉退化成小枝狀，果實為毬果。<br>
+            2.常綠大喬木，高度可達 20 公尺以上，木麻黃是少數具有根瘤的非豆科<br>
+            植物，由於根瘤裏的根瘤菌可以固定空氣中的氮，因此極能耐於貧瘠的土壤。<br>
+            地點：{{ place }}
+
+
+            </div>
+        <div class="image" style="background-image: url('/static/3333LINE_ALBUM_木麻黃_231222_1.jpg');"></div>
+        <div class="image1" style="background-image: url('/static/333LINE_ALBUM_木麻黃_231222_1.jpg');"></div>
+    </div> 
+
+
+
+    <script>
+        topImage = document.querySelector('.Topimage');
+        top1 = document.getElementById('Top1');
+        Leftboxes = [];
+
+        topImage.addEventListener('click', function () {
+            if (Leftboxes.length > 0) {
+                for (var i = 0; i < Leftboxes.length; i++) {
+                    top1.removeChild(Leftboxes[i]);
+                }
+                Leftboxes = [];
+            } 
+            
+            else {
+                Leftbox = document.createElement('div');
+                Leftbox.classList.add('Leftbox');
+
+                Linkelement1 = document.createElement('input');
+                Linkelement1.type = "button";
+                Linkelement1.onclick = function() {
+                location.href = '/tree';
+                };
+                Linkelement1.value = '回到主頁';
+                Linkelement1.classList.add('Goback');
+                Leftbox.appendChild(Linkelement1);
+
+                Linkelement2 = document.createElement('input');
+                Linkelement2.type = "button";
+                Linkelement2.onclick = function() {
+                location.href = '/login1';
+                };
+                Linkelement2.value = '登出';
+                Linkelement2.classList.add('Loginout');
+                Leftbox.appendChild(Linkelement2);
+
+                top1.appendChild(Leftbox);
+                Leftboxes.push(Leftbox); 
+            }
+        });
+
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹葉</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='植物框架.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/Users/hoyi/CGI/cgi-bin/static/樹葉.css"/> -->
+</head>
+
+<body>
+    <div class="Background" id ='Background'>
+        <div class="Top" id="Top1">
+            <a href="#" class="Topimage" style="background-image: url('/static/視網膜圖片三條線1.png');"></a>
+            <!-- <a href="#" class="Topimage" style="background-image: url('/Users/hoyi/Downloads/視網膜圖片三條線1.png') ;"></a> -->
+            <form action="/Find" method="POST">
+                <input type="textbox" name="search" class ='Toptext' />
+                <button onclick="searchPlant()" class="Search">查詢</button>
+            </form>
+            
+        </div>
+        <div class="Topdirections">（可搜尋樹名、科、地點）</div>
+        <div class="Backgroundbuttom">東海大學一校30種常見樹介紹</div>
+        <div class="Backgrounddirections">
+            山櫻花（薔薇科）：<br>
+            1.落葉喬木，高可達 20公尺，葉單一，互生。<br>
+            2花為緋紅色，花期1~3月 ，每朵櫻花平均開放10天後隨即凋謝，果實為核果。<br>
+
+            </div>
+        <div class="image" style="background-image: url('/static/111LINE_ALBUM_山櫻花_231222_1.jpg');"></div>
+        <div class="image1" style="background-image: url('/static/2222LINE_ALBUM_山櫻花_231222_1.jpg');"></div>
+    </div> 
+
+
+
+    <script>
+        topImage = document.querySelector('.Topimage');
+        top1 = document.getElementById('Top1');
+        Leftboxes = [];
+
+        topImage.addEventListener('click', function () {
+            if (Leftboxes.length > 0) {
+                for (var i = 0; i < Leftboxes.length; i++) {
+                    top1.removeChild(Leftboxes[i]);
+                }
+                Leftboxes = [];
+            } 
+            
+            else {
+                Leftbox = document.createElement('div');
+                Leftbox.classList.add('Leftbox');
+
+                Linkelement1 = document.createElement('input');
+                Linkelement1.type = "button";
+                Linkelement1.onclick = function() {
+                location.href = '/tree';
+                };
+                Linkelement1.value = '回到主頁';
+                Linkelement1.classList.add('Goback');
+                Leftbox.appendChild(Linkelement1);
+
+                Linkelement2 = document.createElement('input');
+                Linkelement2.type = "button";
+                Linkelement2.onclick = function() {
+                location.href = '/login1';
+                };
+                Linkelement2.value = '登出';
+                Linkelement2.classList.add('Loginout');
+                Leftbox.appendChild(Linkelement2);
+
+                top1.appendChild(Leftbox);
+                Leftboxes.push(Leftbox); 
+            }
+        });
+
+    </script>
+</body>
+</html>

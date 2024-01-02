@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹葉</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='植物框架.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/Users/hoyi/CGI/cgi-bin/static/樹葉.css"/> -->
+</head>
+
+<body>
+    <div class="Background" id ='Background'>
+        <div class="Top" id="Top1">
+            <a href="#" class="Topimage" style="background-image: url('/static/視網膜圖片三條線1.png');"></a>
+            <!-- <a href="#" class="Topimage" style="background-image: url('/Users/hoyi/Downloads/視網膜圖片三條線1.png') ;"></a> -->
+            <form action="/Find" method="POST">
+                <input type="textbox" name="search" class ='Toptext' />
+                <button onclick="searchPlant()" class="Search">查詢</button>
+            </form>
+            
+        </div>
+        <div class="Topdirections">（可搜尋樹名、科、地點）</div>
+        <div class="Backgroundbuttom">東海大學一校30種常見樹介紹</div>
+        <div class="Backgrounddirections">
+            大葉油加利（桃金孃科）：<br>
+            1.原產地在澳洲，高可達 35 公尺。<br>
+            2.葉序為互生，葉形呈卵狀長橢圓形。<br>
+            3.花腋生，著花5~10朵，開花時花蓋脫落，露出花蕊，在春、秋二季開花。<br>
+            花為黃白色，花絲白色，果實為蒴果倒卵狀長橢圓形。<br>
+            地點：{{ place }}
+            
+            
+            </div>
+        <div class="image" style="background-image: url('/static/LINE_ALBUM_大葉油加利1_231222_1.jpg');"></div>
+        <div class="image1" style="background-image: url('/static/LINE_ALBUM_大葉油加利_231219_2.jpg');"></div>
+    </div> 
+
+
+
+    <script>
+        topImage = document.querySelector('.Topimage');
+        top1 = document.getElementById('Top1');
+        Leftboxes = [];
+
+        topImage.addEventListener('click', function () {
+            if (Leftboxes.length > 0) {
+                for (var i = 0; i < Leftboxes.length; i++) {
+                    top1.removeChild(Leftboxes[i]);
+                }
+                Leftboxes = [];
+            } 
+            
+            else {
+                Leftbox = document.createElement('div');
+                Leftbox.classList.add('Leftbox');
+
+                Linkelement1 = document.createElement('input');
+                Linkelement1.type = "button";
+                Linkelement1.onclick = function() {
+                location.href = '/tree';
+                };
+                Linkelement1.value = '回到主頁';
+                Linkelement1.classList.add('Goback');
+                Leftbox.appendChild(Linkelement1);
+
+                Linkelement2 = document.createElement('input');
+                Linkelement2.type = "button";
+                Linkelement2.onclick = function() {
+                location.href = '/login1';
+                };
+                Linkelement2.value = '登出';
+                Linkelement2.classList.add('Loginout');
+                Leftbox.appendChild(Linkelement2);
+
+                top1.appendChild(Leftbox);
+                Leftboxes.push(Leftbox); 
+            }
+        });
+
+    </script>
+</body>
+</html>

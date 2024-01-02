@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹葉</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='植物框架.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/Users/hoyi/CGI/cgi-bin/static/樹葉.css"/> -->
+</head>
+
+<body>
+    <div class="Background" id ='Background'>
+        <div class="Top" id="Top1">
+            <a href="#" class="Topimage" style="background-image: url('/static/視網膜圖片三條線1.png');"></a>
+            <!-- <a href="#" class="Topimage" style="background-image: url('/Users/hoyi/Downloads/視網膜圖片三條線1.png') ;"></a> -->
+            <form action="/Find" method="POST">
+                <input type="textbox" name="search" class ='Toptext' />
+                <button onclick="searchPlant()" class="Search">查詢</button>
+            </form>
+            
+        </div>
+        <div class="Topdirections">（可搜尋樹名、科、地點）</div>
+        <div class="Backgroundbuttom">東海大學一校30種常見樹介紹</div>
+        <div class="Backgrounddirections">
+            黑板樹（夾竹桃科）：<br>
+            1.高可達 45 公尺，有白色乳液，具毒性，不易落葉，對環境適應力強。<br>
+            2.單葉，4~8 枚輪生，長橢圓狀披針形至長橢圓狀倒卵形。<br>
+            3.花多數，小形，淡綠色或淡黃綠色，花期二週。<br>
+            4.果實為蓇葖果，成熟時果實開裂，種子兩端有黃褐色叢毛，可隨風散佈至各地。<br>
+            地點：{{ place }}
+
+
+            </div>
+        <div class="image" style="background-image: url('/static/66666LINE_ALBUM_黑板樹_231222_1.jpg');"></div>
+        <div class="image1" style="background-image: url('/static/666665LINE_ALBUM_黑板樹_231222_1.jpg');"></div>
+    </div> 
+
+
+
+    <script>
+        topImage = document.querySelector('.Topimage');
+        top1 = document.getElementById('Top1');
+        Leftboxes = [];
+
+        topImage.addEventListener('click', function () {
+            if (Leftboxes.length > 0) {
+                for (var i = 0; i < Leftboxes.length; i++) {
+                    top1.removeChild(Leftboxes[i]);
+                }
+                Leftboxes = [];
+            } 
+            
+            else {
+                Leftbox = document.createElement('div');
+                Leftbox.classList.add('Leftbox');
+
+                Linkelement1 = document.createElement('input');
+                Linkelement1.type = "button";
+                Linkelement1.onclick = function() {
+                location.href = '/tree';
+                };
+                Linkelement1.value = '回到主頁';
+                Linkelement1.classList.add('Goback');
+                Leftbox.appendChild(Linkelement1);
+
+                Linkelement2 = document.createElement('input');
+                Linkelement2.type = "button";
+                Linkelement2.onclick = function() {
+                location.href = '/login1';
+                };
+                Linkelement2.value = '登出';
+                Linkelement2.classList.add('Loginout');
+                Leftbox.appendChild(Linkelement2);
+
+                top1.appendChild(Leftbox);
+                Leftboxes.push(Leftbox); 
+            }
+        });
+
+    </script>
+</body>
+</html>
