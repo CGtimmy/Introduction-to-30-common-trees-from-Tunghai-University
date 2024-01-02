@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樹葉</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='樹葉.css') }}"/>
+    <!-- <link rel="stylesheet" type="text/css" href="/Users/hoyi/CGI/cgi-bin/static/樹葉.css"/> -->
+</head>
+
+<body>
+    <div class="Background" id ='Background'>
+        <div class="Top" id="Top1">
+            <a href="#" class="Topimage" style="background-image: url('/static/視網膜圖片三條線1.png');"></a>
+            <!-- <a href="#" class="Topimage" style="background-image: url('/Users/hoyi/Downloads/視網膜圖片三條線1.png') ;"></a> -->
+            <form action="/Find" method="POST">
+                <input type="textbox" name="search" class ='Toptext' />
+                <button onclick="searchPlant()" class="Search">查詢</button>
+            </form>
+            
+        </div>
+        <div class="Backgroundbuttom">東海大學一校30種常見樹介紹</div>
+        <div class="Backgrounddirections">（可搜尋樹名、科、地點）</div>
+    </div> 
+    <a href='/seven_flower' class="image1" style="background-image: url('/static/LINE_ALBUM_七里香_231219_1.jpg');" ></a>
+    <a href='/big_flower_purple' class="image2" style="background-image: url('/static/LINE_ALBUM_大花紫薇_231219_1.jpg');"></a>
+    <a href='/big_leaf' class="image3"  style="background-image: url('/static/LINE_ALBUM_大葉油加利_231219_2.jpg');"></a>
+    <a href='/small_leaf' class="image4" style="background-image: url('/static/LINE_ALBUM_小葉桃花心木_231219_1.jpg');"></a>
+    <a href='/moutain_flower' class="image5" style="background-image: url('/static/LINE_ALBUM_山櫻花_231219_1.jpg');"></a>
+    <a href='/think_tree' class="image6" style="background-image: url('/static/LINE_ALBUM_相思樹_231219_1.jpg');"></a>
+    <a href='/son_tree' class="image7" style="background-image: url('/static/LINE_ALBUM_桑樹_231219_1.jpg');"></a>
+    <a href='/block_tree' class="image8" style="background-image: url('/static/LINE_ALBUM_黑板樹_231219_1.jpg');"></a>
+    <a href='/bird_tree' class="image9" style="background-image: url('/static/LINE_ALBUM_小葉南洋杉_231223_1.jpg');"></a>
+    <a href='/loooo' class="image10" style="background-image: url('/static/LINE_ALBUM_垂柳_231219_1.jpg');"></a>
+    <a href='/dragon_tree' class="image11" style="background-image: url('/static/LINE_ALBUM_龍柏_231219_1.jpg');"></a>
+    <a href='/yellow' class="image12" style="background-image: url('/static/LINE_ALBUM_木麻黃_231220_1.jpg');"></a>
+    <a href='/bloom' class="image13" style="background-image: url('/static/LINE_ALBUM_血桐_231220_1.jpg');"></a>
+    <a href='/wide' class="image14" style="background-image: url('/static/LINE_ALBUM_濕地松_231220_1.jpg');"></a>
+    <a href='/sheap' class="image15" style="background-image: url('/static/LINE_ALBUM_羊蹄甲_231220_1.jpg');"></a>
+    <a href='/south' class="image16" style="background-image: url('/static/LINE_ALBUM_南天竹_231220_1.jpg');"></a>
+    <a href='/big_bird' class="image17" style="background-image: url('/static/LINE_ALBUM_鳳凰木_231220_1.jpg');"></a>
+    <a href='/huu' class="image18" style="background-image: url('/static/LINE_ALBUM_銀樺_231220_1.jpg');"></a>
+    <a href='/money' class="image19" style="background-image: url('/static/LINE_ALBUM_串錢柳_231220_1.jpg');"></a>
+    <a href='/duck' class="image20" style="background-image: url('/static/LINE_ALBUM_鵝掌蘗_231220_1.jpg');"></a>
+    <a href='/white' class="image21" style="background-image: url('/static/LINE_ALBUM_白千層_231220_1.jpg');"></a>
+    <a href='/go' class="image22" style="background-image: url('/static/LINE_ALBUM_構樹_231220_1.jpg');"></a>
+    <a href='/smell' class="image23" style="background-image: url('/static/LINE_ALBUM_楓香_231220_1.jpg');"></a>
+    <a href='/winter' class="image24" style="background-image: url('/static/LINE_ALBUM_茄苳_231220_1.jpg');"></a>
+    <a href='/strangle' class="image25" style="background-image: url('/static/LINE_ALBUM_正榕_231220_1.jpg');"></a>
+    <a href='/dirty' class="image26" style="background-image: url('/static/LINE_ALBUM_樟樹_231220_1.jpg');"></a>
+    <a href='/taiwan' class="image27" style="background-image: url('/static/LINE_ALBUM_臺灣欒樹_231220_1.jpg');"></a>
+    <a href='/blue' class="image28" style="background-image: url('/static/LINE_ALBUM_洋玉蘭_231220_1.jpg');"></a>
+    <a href='/woo' class="image29" style="background-image: url('/static/LINE_ALBUM_烏臼_231220_1.jpg');"></a>
+    <a href='/gold_flower' class="image30" style="background-image: url('/static/LINE_ALBUM_蕾絲金露花_231220_1.jpg');"></a>
+
+    <div id="imag1"></div>
+    <div id="imag2"></div>
+    <div id="imag3"></div>
+    <div id="imag4"></div>
+    <div id="imag5"></div>
+    <div id="imag6"></div>
+    <div id="imag7"></div>
+    <div id="imag8"></div>
+    <div id="imag9"></div>
+    <div id="imag10"></div>
+    <div id="imag11"></div>
+    <div id="imag12"></div>
+    <div id="imag13"></div>
+    <div id="imag14"></div>
+    <div id="imag15"></div>
+    <div id="imag16"></div>
+    <div id="imag17"></div>
+    <div id="imag18"></div>
+    <div id="imag19"></div>
+    <div id="imag20"></div>
+    <div id="imag21"></div>
+    <div id="imag22"></div>
+    <div id="imag23"></div>
+    <div id="imag24"></div>
+    <div id ="imag25"></div>
+    <div id="imag26"></div>
+    <div id="imag26"></div>
+    <div id="imag27"></div> 
+    <div id="imag28"></div>
+    <div id="imag29"></div>
+    <div id="imag30"></div>
+
+    <script>
+        topImage = document.querySelector('.Topimage');
+        top1 = document.getElementById('Top1');
+        Leftboxes = [];
+
+        topImage.addEventListener('click', function () {
+            if (Leftboxes.length > 0) {
+                for (var i = 0; i < Leftboxes.length; i++) {
+                    top1.removeChild(Leftboxes[i]);
+                }
+                Leftboxes = [];
+            } 
+            
+            else {
+                Leftbox = document.createElement('div');
+                Leftbox.classList.add('Leftbox');
+
+                Linkelement1 = document.createElement('input');
+                Linkelement1.type = "button";
+                Linkelement1.onclick = function() {
+                location.href = '/tree';
+                };
+                Linkelement1.value = '回到主頁';
+                Linkelement1.classList.add('Goback');
+                Leftbox.appendChild(Linkelement1);
+
+                Linkelement2 = document.createElement('input');
+                Linkelement2.type = "button";
+                Linkelement2.onclick = function() {
+                location.href = '/login1';
+                };
+                Linkelement2.value = '登出';
+                Linkelement2.classList.add('Loginout');
+                Leftbox.appendChild(Linkelement2);
+
+                top1.appendChild(Leftbox);
+                Leftboxes.push(Leftbox); 
+            }
+        });
+
+
+            imag1 = document.createElement('div') ;
+            imag1.classList.add('imag1');
+            imag1.textContent = '七里香';
+            document.getElementById ("imag1").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag1);
+
+            imag2 = document.createElement('div') ;
+            imag2.classList.add('imag2');
+            imag2.textContent = '大花紫薇';
+            document.getElementById ("imag2").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag2);
+
+            imag3 = document.createElement('div') ;
+            imag3.classList.add('imag3');
+            imag3.textContent = '大葉油加利';
+            document.getElementById ("imag3").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag3);
+
+            imag4 = document.createElement('div') ;
+            imag4.classList.add('imag4');
+            imag4.textContent = '小葉桃花心木';
+            document.getElementById ("imag4").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag4);
+
+            imag5 = document.createElement('div') ;
+            imag5.classList.add('imag5');
+            imag5.textContent = '山櫻花';
+            document.getElementById ("imag5").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag5);
+
+
+            imag6 = document.createElement('div') ;
+            imag6.classList.add('imag6');
+            imag6.textContent = '相思樹';
+            document.getElementById ("imag6").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag6);
+
+            imag7 = document.createElement('div') ;
+            imag7.classList.add('imag7');
+            imag7.textContent = '桑樹';
+            document.getElementById ("imag7").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag7);
+
+
+            imag8 = document.createElement('div') ;
+            imag8.classList.add('imag8');
+            imag8.textContent = '黑板樹';
+            document.getElementById ("imag8").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag8);
+
+
+            imag9 = document.createElement('div') ;
+            imag9.classList.add('imag9');
+            imag9.textContent = '小葉南洋杉';
+            document.getElementById ("imag9").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag9);
+
+            imag10 = document.createElement('div') ;
+            imag10.classList.add('imag10');
+            imag10.textContent = '垂柳';
+            document.getElementById ("imag10").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag10);
+
+            imag11 = document.createElement('div') ;
+            imag11.classList.add('imag11');
+            imag11.textContent = '龍柏';
+            document.getElementById ("imag11").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag11);
+
+            imag12 = document.createElement('div') ;
+            imag12.classList.add('imag12');
+            imag12.textContent = '木麻黃';
+            document.getElementById ("imag12").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag12);
+
+            imag13 = document.createElement('div') ;
+            imag13.classList.add('imag13');
+            imag13.textContent = '血桐';
+            document.getElementById ("imag13").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag13);
+
+            imag14 = document.createElement('div') ;
+            imag14.classList.add('imag14');
+            imag14.textContent = '濕地松';
+            document.getElementById ("imag14").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag14);
+
+            imag15 = document.createElement('div') ;
+            imag15.classList.add('imag15');
+            imag15.textContent = '羊蹄甲';
+            document.getElementById ("imag15").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag15);
+
+            imag16 = document.createElement('div') ;
+            imag16.classList.add('imag16');
+            imag16.textContent = '南天竹';
+            document.getElementById ("imag16").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag16);
+
+            imag17 = document.createElement('div') ;
+            imag17.classList.add('imag17');
+            imag17.textContent = '鳳凰木';
+            document.getElementById ("imag17").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag17);
+
+            imag18 = document.createElement('div') ;
+            imag18.classList.add('imag18');
+            imag18.textContent = '銀樺';
+            document.getElementById ("imag18").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag18);
+
+            imag19 = document.createElement('div') ;
+            imag19.classList.add('imag19');
+            imag19.textContent = '串錢柳';
+            document.getElementById ("imag19").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag19);
+
+            imag20 = document.createElement('div') ;
+            imag20.classList.add('imag20');
+            imag20.textContent = '鵝掌蘗';
+            document.getElementById ("imag20").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag20);
+
+            imag21 = document.createElement('div') ;
+            imag21.classList.add('imag21');
+            imag21.textContent = '白千層';
+            document.getElementById ("imag21").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag21);
+
+            imag22 = document.createElement('div') ;
+            imag22.classList.add('imag22');
+            imag22.textContent = '構樹';
+            document.getElementById ("imag22").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag22);
+
+            imag23 = document.createElement('div') ;
+            imag23.classList.add('imag23');
+            imag23.textContent = '楓香';
+            document.getElementById ("imag23").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag23);
+
+            imag24 = document.createElement('div') ;
+            imag24.classList.add('imag24');
+            imag24.textContent = '茄苳';
+            document.getElementById ("imag24").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag24);
+
+
+            imag25 = document.createElement('div') ;
+            imag25.classList.add('imag25');
+            imag25.textContent = '正榕';
+            document.getElementById ("imag25").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag25);
+
+            imag26 = document.createElement('div') ;
+            imag26.classList.add('imag26');
+            imag26.textContent = '樟樹';
+            document.getElementById ("imag26").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag26);
+
+
+            imag27 = document.createElement('div') ;
+            imag27.classList.add('imag27');
+            imag27.textContent = '臺灣欒樹';
+            document.getElementById ("imag27").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag27);
+
+
+            imag28 = document.createElement('div') ;
+            imag28.classList.add('imag28');
+            imag28.textContent = '洋玉蘭';
+            document.getElementById ("imag28").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag28);
+
+            imag29 = document.createElement('div') ;
+            imag29.classList.add('imag29');
+            imag29.textContent = '烏臼';
+            document.getElementById ("imag29").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag29);
+
+            imag30 = document.createElement('div') ;
+            imag30.classList.add('imag30');
+            imag30.textContent = '蕾絲金露花';
+            document.getElementById ("imag30").style.color = "block";
+            Background = document.getElementById('Background');
+            Background.appendChild(imag30);
+
+
+
+
+
+    </script>
+</body>
+</html>
